@@ -1,0 +1,18 @@
+- hosts: all
+  become: true
+  tasks:
+    # сгенерируем файл конфигурации на основе шаблона
+    # и укажем, что требуетс€ выполнить задачу Уrestart sshdФ
+    # если файл изменилс€
+  - name: write the sshd config file
+    template: src=templates/ssh_config.j2 dest=/etc/ssh/ssh_config
+    notify:
+    - restart sshd
+
+  - name: ensure sshd is running
+    service: name=sshd state=started
+  
+  handlers:
+    - name: restart sshd
+      # используем модуль service дл€ перезапуска
+      service: name=sshd state=restarted
