@@ -1,6 +1,8 @@
 ---
+- name: temp kostyl
+  command: ifconfig ens33:0 192.168.108.1
 - name: install isc-dhcp-server
-  become: true
+  #become: true
   apt: 
     name: isc-dhcp-server 
     state: latest
