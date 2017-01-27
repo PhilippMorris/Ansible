@@ -23,5 +23,5 @@
   notify:
   - restart dhcpd
 - name: check service running
-  become: true
+  #become: true
   service: name=isc-dhcp-server state=started
