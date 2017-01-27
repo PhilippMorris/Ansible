@@ -1,11 +1,11 @@
----
+11aa---
 - name: install isc-dhcp-server
   become: true
   apt: 
     name: isc-dhcp-server 
     state: latest
 - name: copy dhcpd.conf
-  become: true
+  #become: true
   copy: 
     src: files/dhcpd.conf 
     dest: /etc/dhcp/dhcpd.conf
@@ -13,7 +13,7 @@
     group: root
     mode: 0644
 - name: copy isc-dhcp-server
-  become: true
+  #become: true
   copy: 
     src: files/isc-dhcp-server 
     dest: /etc/default/isc-dhcp-server
