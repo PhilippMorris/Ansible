@@ -1,4 +1,4 @@
-- hosts: test2
+- hosts: test1
   gather_facts: yes
   roles:
     - dhcp
