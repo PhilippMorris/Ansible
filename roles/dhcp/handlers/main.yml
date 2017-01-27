@@ -1,0 +1,11 @@
+---
+#- name: restart dhcpd
+#  service: 
+#    name: isc-dhcp-server 
+#    state: restarted
+- name: restart dhcp
+  become: true
+  #become_user: pirate
+  service:
+    name: "{{ dhcp_service }}"
+    state: restarted

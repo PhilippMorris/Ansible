@@ -1,0 +1,3 @@
+ssh_super_team:
+    - { user: ‘pupkin’, key: ‘ssh-rsa pupkin_pub_key’, shell: ‘/bin/zsh’}
+    - { user: ‘oldfag’, key: ‘ssh-rsa oldfag_pub_key’, shell: ‘/bin/sh’ }
