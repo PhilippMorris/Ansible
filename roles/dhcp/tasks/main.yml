@@ -1,6 +1,4 @@
 ---
-- name: temp kostyl
-  command: ifconfig ens33:0 192.168.108.1
 - name: install isc-dhcp-server
   #become: true
   apt: 
@@ -14,6 +12,8 @@
     owner: root
     group: root
     mode: 0644
+  notify:
+  - restart dhcpd
 - name: copy isc-dhcp-server
   #become: true
   copy: 
