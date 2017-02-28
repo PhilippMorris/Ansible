@@ -1,6 +1,6 @@
 ---
 #sudo ansible-pull --accept-host-key -o -U https://github.com/PhilippMorris/Ansible.git
-- hosts: test1
+- hosts: localhost
 #  gather_facts: yes
   roles:
 #    - dhcp
