@@ -1,6 +1,7 @@
 ---
-#sudo ansible-pull --accept-host-key --ask-become-pass -o -U https://github.com/PhilippMorris/Ansible.git
+#sudo ansible-pull --accept-host-key -o -U https://github.com/PhilippMorris/Ansible.git
 - hosts: test1
-  gather_facts: yes
+#  gather_facts: yes
   roles:
-    - dhcp
+#    - dhcp
+    - kiosk

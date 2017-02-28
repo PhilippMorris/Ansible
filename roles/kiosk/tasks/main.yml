@@ -1,0 +1,32 @@
+---
+- name: Add user kiosk
+  user: 
+    name: kiosk
+    group: kiosk
+    password: AppCh0rd
+ - name: Add user acadmin
+  user: 
+    name: acadmin
+    group: sudo
+    password: AppCh0rd   
+- name: Install basic software 
+  apt: name={{item}} state=installed
+  with_items:
+       - chromium-browser
+       - xorg
+       - matchbox 
+       - nodm
+- name: Copy nodm config
+  copy: 
+    src: files/nodm 
+    dest: /etc/default/nodm
+    owner: root
+    group: root
+    mode: 0644
+- name: Create file .xsession
+  copy: 
+    src: files/_.xsession 
+    dest: /home/kiosk/.xsession 
+    owner: kiosk
+    group: kiosk
+    mode: 0644
