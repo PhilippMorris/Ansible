@@ -4,7 +4,7 @@
     name: kiosk
     group: kiosk
     password: AppCh0rd
- - name: Add user acadmin
+- name: Add user acadmin
   user: 
     name: acadmin
     group: sudo
