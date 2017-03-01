@@ -15,7 +15,7 @@
 - name: copy logrotate
   copy: 
     src: files/logrotate.conf 
-    dest: /etc/logrotate.d/mongodb/logrotate.conf
+    dest: /etc/logrotate.d/mongodb-server
     owner: root
     group: root
     mode: 0644
