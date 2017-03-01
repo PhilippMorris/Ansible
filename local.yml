@@ -4,4 +4,5 @@
 #  gather_facts: yes
   roles:
 #    - dhcp
-    - kiosk
+#    - kiosk
+    - mongodb

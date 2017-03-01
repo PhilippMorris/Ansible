@@ -1,0 +1,25 @@
+---
+- name: install mongodb
+  apt: 
+    name: mongodb 
+    state: latest
+- name: copy mongodb.conf
+  copy: 
+    src: files/mongodb.conf 
+    dest: /etc/mongodb.conf
+    owner: root
+    group: root
+    mode: 0644
+  notify:
+  - restart mongodb
+- name: copy logrotate
+  copy: 
+    src: files/logrotate.conf 
+    dest: /etc/logrotate.d/mongodb/logrotate.conf
+    owner: root
+    group: root
+    mode: 0644
+  notify:
+  - restart mongodb
+- name: check service running
+  service: name=mongodb state=started
