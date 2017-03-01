@@ -3,12 +3,12 @@
   user: 
     name: kiosk
     group: kiosk
-    password: AppCh0rd
+    password: $6$rounds=656000$HVXxKXYOOZ7lAsgW$NBu3.rOIjv.89lhWrctaVF/0ut6RbXX5Syy/5IO2G6vw.yHx26iJsazJSIozYJDEJikwX5LVqvegZrqH1VGzK0
 - name: Add user acadmin
   user: 
     name: acadmin
     group: sudo
-    password: AppCh0rd   
+    password: $6$rounds=656000$HVXxKXYOOZ7lAsgW$NBu3.rOIjv.89lhWrctaVF/0ut6RbXX5Syy/5IO2G6vw.yHx26iJsazJSIozYJDEJikwX5LVqvegZrqH1VGzK0   
 - name: Install basic software 
   apt: name={{item}} state=installed
   with_items:
