@@ -5,4 +5,5 @@
   roles:
 #    - dhcp
 #    - kiosk
-    - mongodb
+#    - mongodb
+    - adb
