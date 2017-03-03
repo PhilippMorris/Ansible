@@ -10,7 +10,6 @@
     - { src: 'files/bridge.conf', dest: '/etc/init/bridge.conf' }
     - { src: 'files/80-removable-storage.rules', dest: '/etc/udev/rules.d/80-removable-storage.rules' }
     - { src: 'files/kiosk.service', dest: '/lib/systemd/system/kiosk.service' }
-    mode: 0755
 - name: create /var/www/kiosk/public/app
   file:
     path: /var/www/kiosk/public/app
