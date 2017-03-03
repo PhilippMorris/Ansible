@@ -1,18 +1,35 @@
 ---
-#- name: Create bridge directory
-#  file:
-#    path: /var/www/bridge
-#    state: directory
-#    mode: 0755
-- name: copy adb
-  copy: 
-    src: files/adb 
-    dest:  /usr/bin/adb
+- name: install nodejs
+  apt: 
+    name: nodejs 
+    state: latest
+- name: copy adb bridge.conf 
+  copy: src={{ item.src }} dest={{ item.dest }}
+  with_items:
+    - { src: 'files/adb', dest: '/usr/bin/adb' }
+    - { src: 'files/bridge.conf', dest: '/etc/init/bridge.conf' }
+    - { src: 'files/80-removable-storage.rules', dest: '/etc/udev/rules.d/80-removable-storage.rules' }
+    - { src: 'files/kiosk.service', dest: '/lib/systemd/system/kiosk.service' }
     mode: 0755
-- name: bridge files
+- name: create /var/www/kiosk/public/app
+  file:
+    path: /var/www/kiosk/public/app
+    state: directory
+    mode: 0755    
+#- name: copy adb
+#  copy: 
+#    src: files/adb 
+#    dest:  /usr/bin/adb
+#    mode: 0755
+- name: copy bridge files
   copy: 
     src: files/bridge/ 
     dest: /var/www/bridge/
-#    owner: root
-#    group: root
+    mode: 0755
+- name: copy kiosk files
+  copy: 
+    src: files/kiosk/ 
+    dest:  /opt/kiosk/
+    owner: acadmin
+    group: acadmin
     mode: 0755
