@@ -37,6 +37,7 @@
   group:
     name: acadmin
     state: present
+- name: copy kiosk files1  
   copy: 
     src: files/kiosk/ 
     dest:  /opt/kiosk/
