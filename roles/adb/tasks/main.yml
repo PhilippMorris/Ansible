@@ -24,9 +24,9 @@
     dest: /var/www/kiosk
 - name: create /var/www/kiosk/public/app
     file:
-    path: /var/www/kiosk/public/app
-    state: directory
-    mode: 0755    
+        path: /var/www/kiosk/public/app
+        state: directory
+        mode: 0755    
 #- name: copy bridge files
 #  copy: 
 #    src: files/bridge/ 
