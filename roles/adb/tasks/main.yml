@@ -9,8 +9,9 @@
     state: latest
 - name: install nodejs
   command: curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
-  apt: 
-    name: nodejs 
+- name: install nodejs1  
+  apt:
+    name: nodejs
     state: latest
 - name: copy kiosk.service
   copy: src={{ item.src }} dest={{ item.dest }}
