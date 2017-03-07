@@ -1,34 +1,52 @@
 ---
+- name: install android-tools-adb
+  apt: 
+    name: android-tools-adb 
+    state: latest    
+- name: install usbmount
+  apt: 
+    name: usbmount 
+    state: latest
 - name: install nodejs
+  command: curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
   apt: 
     name: nodejs 
     state: latest
-- name: copy adb bridge.conf 
+- name: copy kiosk.service
   copy: src={{ item.src }} dest={{ item.dest }}
   with_items:
-    - { src: 'files/adb', dest: '/usr/bin/adb' }
-    - { src: 'files/bridge.conf', dest: '/etc/init/bridge.conf' }
+#    - { src: 'files/bridge.conf', dest: '/etc/init/bridge.conf' }
     - { src: 'files/80-removable-storage.rules', dest: '/etc/udev/rules.d/80-removable-storage.rules' }
     - { src: 'files/kiosk.service', dest: '/lib/systemd/system/kiosk.service' }
+#    - { src: 'files/bridge.service', dest: '/lib/systemd/system/bridge.service' }
+- git:
+    repo: https://bchodbot:Pf4EZGEu@github.com/BaseChord/KioskDistribution.git
+    dest: /var/www/kiosk
 - name: create /var/www/kiosk/public/app
-  file:
+    file:
     path: /var/www/kiosk/public/app
     state: directory
     mode: 0755    
-#- name: copy adb
+#- name: copy bridge files
 #  copy: 
-#    src: files/adb 
-#    dest:  /usr/bin/adb
+#    src: files/bridge/ 
+#    dest: /var/www/bridge/
 #    mode: 0755
-- name: copy bridge files
-  copy: 
-    src: files/bridge/ 
-    dest: /var/www/bridge/
-    mode: 0755
 - name: copy kiosk files
+  group:
+    name: acadmin
+    state: present
   copy: 
     src: files/kiosk/ 
     dest:  /opt/kiosk/
     owner: acadmin
     group: acadmin
     mode: 0755
+#- service:
+#    name: bridge.service
+#    enabled: yes
+#    state: started
+- service:
+    name: kiosk.service
+    enabled: yes
+    state: started
