@@ -18,6 +18,7 @@
 - name: install nodejs1
   apt:
     name: nodejs
+#    allow_unauthenticated: yes
     state: latest
 - name: copy kiosk.service
   copy: src={{ item.src }} dest={{ item.dest }}
@@ -29,6 +30,7 @@
 - git:
     repo: https://bchodbot:Pf4EZGEu@github.com/BaseChord/KioskDistribution.git
     dest: /var/www/kiosk
+    force: yes
 #- name: create /var/www/kiosk/public/app
 #    file:
 #        path: /var/www/kiosk/public/app
