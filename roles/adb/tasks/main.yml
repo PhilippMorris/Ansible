@@ -8,7 +8,7 @@
     name: usbmount 
     state: latest
 - name: install nodejs
-  command: curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
+  action: shell curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
 - name: install nodejs1  
   apt:
     name: nodejs
