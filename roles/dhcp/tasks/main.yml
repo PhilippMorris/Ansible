@@ -1,11 +1,9 @@
 ---
 - name: install isc-dhcp-server
-  #become: true
   apt: 
     name: isc-dhcp-server 
     state: latest
 - name: copy dhcpd.conf
-  #become: true
   copy: 
     src: files/dhcpd.conf 
     dest: /etc/dhcp/dhcpd.conf
@@ -15,7 +13,6 @@
   notify:
   - restart dhcpd
 - name: copy isc-dhcp-server
-  #become: true
   copy: 
     src: files/isc-dhcp-server 
     dest: /etc/default/isc-dhcp-server
@@ -25,5 +22,4 @@
   notify:
   - restart dhcpd
 - name: check service running
-  #become: true
   service: name=isc-dhcp-server state=started

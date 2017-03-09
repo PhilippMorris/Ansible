@@ -4,6 +4,6 @@
   connection: local
   roles:
 #    - dhcp
-#    - kiosk
-#    - mongodb
+    - kiosk
+    - mongodb
     - adb
