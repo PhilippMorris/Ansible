@@ -11,7 +11,7 @@
   action: shell echo 'deb https://deb.nodesource.com/node_7.x jessie main' > /etc/apt/sources.list.d/nodesource.list
 - name: add nodejs deb-src
   action: shell echo 'deb-src https://deb.nodesource.com/node_7.x jessie main' >> /etc/apt/sources.list.d/nodesource.list
-  - name: install nodejs1  
+- name: install nodejs1
   apt:
     name: nodejs
     state: latest
