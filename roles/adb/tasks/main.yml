@@ -35,7 +35,11 @@
 #    src: files/bridge/ 
 #    dest: /var/www/bridge/
 #    mode: 0755
-- name: copy kiosk files
+- name: check acadmin user
+  user:
+    name: acadmin
+    state: present
+- name: check acadmin group
   group:
     name: acadmin
     state: present
