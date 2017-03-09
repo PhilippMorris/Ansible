@@ -12,17 +12,15 @@
     url=https://deb.nodesource.com/gpgkey/nodesource.gpg.key
     state=present
 - name: add nodejs repo
-    apt_repository:
-        repo: deb https://deb.nodesource.com/node_7.x jessie main
-        filename: 'nodesource'
-        state: present
-        update_cache: yes
+    apt_repository: deb https://deb.nodesource.com/node_7.x jessie main
+    filename: 'nodesource'
+    state: present
+    update_cache: yes
 - name: add nodejs src-repo
-    apt_repository:
-        repo: deb-src https://deb.nodesource.com/node_7.x jessie main
-        filename: 'nodesource'
-        state: present
-        update_cache: yes        
+    apt_repository: deb-src https://deb.nodesource.com/node_7.x jessie main
+    filename: 'nodesource'
+    state: present
+    update_cache: yes        
 #- name: add nodejs deb
 #  action: shell echo 'deb https://deb.nodesource.com/node_7.x jessie main' > /etc/apt/sources.list.d/nodesource.list
 #- name: add nodejs deb-src
