@@ -7,6 +7,10 @@
   apt: 
     name: usbmount 
     state: latest
+- name: Add Nodesource Keys
+  apt_key:
+    url=https://deb.nodesource.com/gpgkey/nodesource.gpg.key
+    state=present
 - name: add nodejs deb
   action: shell echo 'deb https://deb.nodesource.com/node_7.x jessie main' > /etc/apt/sources.list.d/nodesource.list
 - name: add nodejs deb-src
