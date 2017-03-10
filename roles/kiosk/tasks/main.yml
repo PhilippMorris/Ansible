@@ -13,7 +13,7 @@
 - name: Add user acadmin
   user: 
     name: acadmin
-    groups: sudo, acadmin
+    groups: sudo,acadmin
     password: $6$rounds=656000$HVXxKXYOOZ7lAsgW$NBu3.rOIjv.89lhWrctaVF/0ut6RbXX5Syy/5IO2G6vw.yHx26iJsazJSIozYJDEJikwX5LVqvegZrqH1VGzK0   
 - name: Install basic software 
   apt: name={{item}} state=installed
