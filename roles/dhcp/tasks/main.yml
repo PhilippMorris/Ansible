@@ -6,7 +6,7 @@
 - name: copy dhcpd.conf
   copy: 
     src: files/dhcpd.conf 
-    dest: /etc/dhcp/dhcpd.conf
+    dest: /etc/dhcp/dhcpd1.conf
     owner: root
     group: root
     mode: 0644
@@ -15,7 +15,7 @@
 - name: copy isc-dhcp-server
   copy: 
     src: files/isc-dhcp-server 
-    dest: /etc/default/isc-dhcp-server
+    dest: /etc/default/isc-dhcp-server1
     owner: root
     group: root
     mode: 0644

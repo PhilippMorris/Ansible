@@ -1,4 +1,7 @@
 ---
+- name: Add group kiosk
+  group: 
+    name: kiosk
 - name: Add user kiosk
   user: 
     name: kiosk
