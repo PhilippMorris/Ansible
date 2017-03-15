@@ -19,7 +19,7 @@
     owner: root
     group: root
     mode: 0644
-  notify:
-  - restart dhcpd
+#  notify:
+#  - restart dhcpd
 #- name: check service running
 #  service: name=isc-dhcp-server state=started
