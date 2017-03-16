@@ -1,0 +1,29 @@
+---
+- name: Install tftpd-hpa
+  apt: 
+    name: tftpd-hpa 
+    state: latest
+- name: copy tftpd-hpa config
+  copy: 
+    src: files/tftpd-hpa
+    dest: /etc/default/tftpd-hpa
+    owner: root
+    group: root
+- name: copy tftpd-hpa config
+  copy: 
+    src: files/tftpd.map
+    dest: /etc/tftpd.map
+    owner: root
+    group: root
+- name: copy share files
+  copy: 
+    src: files/share/ 
+    dest: /usr/share/tftpd/
+- file:
+    src: /usr/share/tftpd/winpe
+    dest: /usr/share/pxe/winpe
+    owner: root
+    group: root
+    state: link
+- name: check service running
+  service: name=tftpd-hpa state=started
