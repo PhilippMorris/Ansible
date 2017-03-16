@@ -25,5 +25,6 @@
     owner: root
     group: root
     state: link
+    force: yes
 - name: check service running
   service: name=tftpd-hpa state=started
