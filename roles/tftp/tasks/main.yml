@@ -20,8 +20,8 @@
     src: files/share/ 
     dest: /usr/share/tftpd/
 - file:
-    src: /usr/share/tftpd/winpe
-    dest: /usr/share/pxe/winpe
+    src: /usr/share/pxe/winpe
+    dest: /usr/share/tftpd/winpe
     owner: root
     group: root
     state: link
