@@ -10,8 +10,8 @@
     owner: root
     group: root
     mode: 0644
-  notify:
-  - restart dhcpd
+#  notify:
+#  - restart dhcpd
 - name: copy isc-dhcp-server
   copy: 
     src: files/isc-dhcp-server 
