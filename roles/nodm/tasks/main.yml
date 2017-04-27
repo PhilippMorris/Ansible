@@ -2,7 +2,7 @@
 - name: Install basic software 
   apt: name={{item}} state=installed
   with_items:
-       - chromium-browser
+#       - chromium-browser
        - xorg
        - matchbox 
        - nodm
