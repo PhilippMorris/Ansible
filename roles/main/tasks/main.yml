@@ -1,7 +1,0 @@
-- name: 'apt | install dependencies'
-  become: true
-  apt: name={{ item }} state=present
-# with_items - это обычный цикл в Ansible, он возьмёт и прогонит все его элементы через action
-  with_items:
-      - 'git'
-      - 'nginx'

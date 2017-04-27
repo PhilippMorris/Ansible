@@ -1,0 +1,30 @@
+---
+- name: 'Install basic software'
+  apt: name={{ item }} state=latest
+  with_items:
+    - 'lldpd'
+    - 'git'
+    - 'ansible'
+- name: Add group kiosk
+  group: 
+    name: kiosk
+- name: Add group acadmin
+  group: 
+    name: acadmin
+- name: Add user kiosk
+  user: 
+    name: kiosk
+    group: kiosk
+    password: $6$rounds=656000$HVXxKXYOOZ7lAsgW$NBu3.rOIjv.89lhWrctaVF/0ut6RbXX5Syy/5IO2G6vw.yHx26iJsazJSIozYJDEJikwX5LVqvegZrqH1VGzK0
+- name: Add user acadmin
+  user: 
+    name: acadmin
+    groups: sudo,acadmin
+    password: $6$rounds=656000$HVXxKXYOOZ7lAsgW$NBu3.rOIjv.89lhWrctaVF/0ut6RbXX5Syy/5IO2G6vw.yHx26iJsazJSIozYJDEJikwX5LVqvegZrqH1VGzK0
+- name: Create crontab entry to clone/pull git repository
+  template:
+    src: templates/etc_cron.d_ansible-pull.j2
+    dest: /etc/cron.d/ansible-pull
+    owner: root
+    group: root
+    mode: 0644
