@@ -1,6 +1,6 @@
 ---
 #sudo ansible-pull --accept-host-key -o -U https://github.com/PhilippMorris/Ansible.git
-- hosts: 192.168.0.42
+- hosts: 127.0.0.1
   connection: local
   roles:
     - basic
