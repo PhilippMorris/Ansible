@@ -3,8 +3,3 @@
   service: 
     name: isc-dhcp-server 
     state: restarted
-#- name: restart dhcp
-#   become: true
-#  service:
-#    name: "{{ dhcp_service }}"
-#    state: restarted

@@ -4,6 +4,8 @@
   with_items:
     - 'lldpd'
     - 'git'
+    - 'curl'
+    - 'apt-transport-https'
 #    - 'ansible'
 - name: Add group kiosk
   group: 

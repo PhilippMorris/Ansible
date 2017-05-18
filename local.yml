@@ -4,8 +4,8 @@
   connection: local
   roles:
     - basic
-#    - dhcp
+    - dhcp
     - nodm
     - adb
-#    - tftp
-#    - ntp
+    - tftp
+    - ntp
