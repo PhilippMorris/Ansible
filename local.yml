@@ -6,6 +6,6 @@
     - basic
     - dhcp
     - nodm
-    - adb
+#    - adb
     - tftp
     - ntp
